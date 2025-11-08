@@ -10,3 +10,6 @@ from app.schemas import UserCreate, UserRead
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
 
+@app.get("/health")
+def get_health():
+    return {"status":"ok"}
